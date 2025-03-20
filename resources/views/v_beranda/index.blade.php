@@ -1,5 +1,6 @@
 @extends('v_layouts.app')
 @section('content')
+<<<<<<< HEAD
     <!-- template -->
 
     <!-- STORE -->
@@ -48,3 +49,8 @@
 
     <!-- end template-->
 @endsection
+=======
+<!-- template -->
+<!-- end template-->
+@endsection
+>>>>>>> 0ff4511393fdbefe9e9298e96cbf27f54186159f
