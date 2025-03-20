@@ -24,8 +24,7 @@
                                     class="product-old-price">{{ $row->kategori->nama_kategori }}</span></h3>
                             <h2 class="product-name"><a href="#">{{ $row->nama_produk }}</a></h2>
                             <div class="product-btns">
-                                <a href="{{ route('produk.detail', $row->id) }}" title="Detail
-Produk">
+                                <a href="{{ route('produk.detail', $row->id) }}" title="Detail Produk">
                                     <button class="main-btn icon-btn"><i class="fa fa-searchplus"></i></button>
                                 </a>
                                 <form action="3" method="post" style="display: inline-block;"
