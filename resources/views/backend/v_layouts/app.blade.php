@@ -130,11 +130,11 @@
                             <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark pro-pic"
                                 href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 @if (Auth::user()->foto)
-                                    <img src="{{ asset('storage/img-user/' . Auth::user()->foto) }}" alt="user"
-                                        class="rounded-circle" width="31">
+                                <img src="{{ asset('storage/img-user/' . Auth::user()->foto) }}" alt="user"
+                                    class="rounded-circle" width="31">
                                 @else
-                                    <img src="{{ asset('storage/img-user/img-default.jpg') }}" alt="user"
-                                        class="rounded-circle" width="31">
+                                <img src="{{ asset('storage/img-user/img-default.jpg') }}" alt="user"
+                                    class="rounded-circle" width="31">
                                 @endif
                                 <div class="dropdown-menu dropdown-menu-right user-dd animated">
                                     <a class="dropdown-item"
@@ -172,6 +172,9 @@
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
                                 href="{{ route('backend.user.index') }}" aria-expanded="false">
                                 <i class="mdi mdi-account"></i><span class="hide-menu">User</span></a>
+                        </li>
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                                href="{{ route('backend.customer.index') }}" aria-expanded="false"><i class="mdi mdi-account-multiple"></i><span class="hide-menu">Customer</span></a>
                         </li>
                         <li class="sidebar-item"> <a class="sidebar-link has-arrow waveseffect waves-dark"
                                 href="javascript:void(0)" aria-expanded="false">
@@ -303,13 +306,13 @@
     <!-- sweetalert End -->
     <!-- konfirmasi success-->
     @if (session('success'))
-        <script>
-            Swal.fire({
-                icon: 'success',
-                title: 'Berhasil!',
-                text: "{{ session('success') }}"
-            });
-        </script>
+    <script>
+        Swal.fire({
+            icon: 'success',
+            title: 'Berhasil!',
+            text: "{{ session('success') }}"
+        });
+    </script>
     @endif
     <!-- konfirmasi success End-->
 

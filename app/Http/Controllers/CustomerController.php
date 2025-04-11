@@ -30,8 +30,7 @@ class CustomerController extends Controller
                     'email' => $socialUser->email,
                     'role' => '2', // Role customer
                     'status' => 1, // Status aktif
-                    'password' => Hash::make('default_password'), // Password default
-                    (opsional)
+                    'password' => Hash::make('default_password'), // Password default (opsional)
                 ]);
                 // Buat data customer
                 Customer::create([
@@ -58,5 +57,15 @@ class CustomerController extends Controller
         $request->session()->invalidate(); // Hapus session
         $request->session()->regenerateToken(); // Regenerate token CSRF
         return redirect('/')->with('success', 'Anda telah berhasil logout.');
+    }
+
+    public function index()
+    {
+        $customer = Customer::orderBy('id', 'desc')->get();
+        return view('backend.v_customer.index', [
+            'judul' => 'Customer',
+            'sub' => 'Halaman Customer',
+            'index' => $customer
+        ]);
     }
 }
