@@ -86,15 +86,6 @@ class CustomerController extends Controller
             'edit' => $customer
         ]);
     }
-    public function edit($id)
-    {
-        $customer = Customer::where('user_id', $id)->firstOrFail();
-        return view('v_customer.edit', [
-            'judul' => 'Customer',
-            'subJudul' => 'Akun Customer',
-            'edit' => $customer
-        ]);
-    }
 
     public function updateAkun(Request $request, $id)
     {
