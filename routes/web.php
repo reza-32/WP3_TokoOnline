@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Http;
 use App\Http\Controllers\BerandaController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\UserController;
@@ -8,6 +9,7 @@ use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\RajaOngkirController;
 
 Route::get('/', function () {
     //return view('welcome');
@@ -90,3 +92,19 @@ Route::middleware('is.customer')->group(function () {
     Route::get('cart', [OrderController::class, 'viewCart'])
         ->name('order.cart');
 });
+
+// Route untuk API Raja Ongkir
+Route::get('/list-ongkir', function () {
+    $response = Http::withHeaders([
+        'key' => '794a5d197b9cb469ae958ed043ccf921'
+    ])->get('https://api.rajaongkir.com/starter/province'); //ganti 'province' atau 'city'
+    dd($response->json());
+    //return response()->json($response->json());
+});
+
+Route::get('/cek-ongkir', function () {
+    return view('ongkir');
+});
+Route::get('/provinces', [RajaOngkirController::class, 'getProvinces']);
+Route::get('/cities', [RajaOngkirController::class, 'getCities']);
+Route::post('/cost', [RajaOngkirController::class, 'getCost']);
