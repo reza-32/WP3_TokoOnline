@@ -122,8 +122,8 @@
 </div>
 <script>
     document.addEventListener('DOMContentLoaded', function() {
-        const originCityCode = 115; //ganti disini untuk kode kota asal
-        const originCityName = 'Depok'; //ganti disini untuk nama kota asal
+        const originCityCode = 365; //ganti disini untuk kode kota asal
+        const originCityName = 'Pontianak'; //ganti disini untuk nama kota asal
         document.getElementById('city_origin').value = originCityCode;
         document.getElementById('city_origin_name').value = originCityName;
         // Load provinces

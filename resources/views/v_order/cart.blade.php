@@ -71,8 +71,7 @@
                             <button type="submit" class="btn btn-sm btn-warning">Update</button>
                         </form>
                     </td>
-                    <td class="total text-center"><strong class="primary-color">Rp. {{
-number_format($item->harga * $item->quantity, 0, ',', '.') }}</strong></td>
+                    <td class="total text-center"><strong class="primary-color">Rp. {{ number_format($item->harga * $item->quantity, 0, ',', '.') }}</strong></td>
                     <td class="text-right">
                         <form action="{{ route('order.remove', $item->produk->id) }}" method="post">
                             @csrf
